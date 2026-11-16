@@ -9,8 +9,8 @@ const kInfectedColor = Color(0xFFFF8748);
 const kDeathColor = Color(0xFFFF4848);
 const kRecoverColor = Color(0xFF36C12C);
 const kPrimaryColor = Color(0xFF3382CC);
-final kShadowColor = Color(0xFFB7B7B7).withOpacity(.16);
-final kActiveShadowColor = Color(0xFF4056C6).withOpacity(.15);
+final kShadowColor = Color(0xFFB7B7B7).withValues(alpha: .16);
+final kActiveShadowColor = Color(0xFF4056C6).withValues(alpha: .15);
 
 //Text Style
 const kHeadingTextStyle = TextStyle(

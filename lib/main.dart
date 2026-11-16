@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:senja_app/constant.dart';
-import 'package:intl/intl.dart';
-import 'package:senja_app/widgets/counter.dart';
 import 'package:senja_app/widgets/home_screen.dart';
-import 'package:senja_app/widgets/info_screen.dart';
-import 'package:senja_app/widgets/my_header.dart';
 import 'package:senja_app/widgets/other_screen.dart';
 
 void main() {
   runApp(MaterialApp(
     title: 'Navigation Basic',
-    home: BottomNavPage(),
+    home: const BottomNavPage(),
   ));
 }
 
 class BottomNavPage extends StatefulWidget {
+  const BottomNavPage({super.key});
+
   @override
-  _BottomNavPageState createState() => _BottomNavPageState();
+  State<BottomNavPage> createState() => _BottomNavPageState();
 }
 
 class _BottomNavPageState extends State<BottomNavPage> {
@@ -39,15 +35,15 @@ class _BottomNavPageState extends State<BottomNavPage> {
     final _bottomNavBarItems = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        title: Text('Home'),
+        label: 'Home',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.favorite),
-        title: Text('Favorite'),
+        label: 'Favorite',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person),
-        title: Text('Profile'),
+        label: 'Profile',
       ),
     ];
 

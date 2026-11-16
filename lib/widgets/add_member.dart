@@ -1,30 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:senja_app/constant.dart';
-import 'package:senja_app/widgets/my_header.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 
 class AddMemberScreen extends StatefulWidget {
+  const AddMemberScreen({super.key});
+
   @override
-  _AddMemberScreenState createState() => _AddMemberScreenState();
+  State<AddMemberScreen> createState() => _AddMemberScreenState();
 }
 
 class _AddMemberScreenState extends State<AddMemberScreen> {
-  bool _isLoading = false;
-  bool _isFieldNamaLengkapValid;
-  bool _isFieldNoHPValid;
-  bool _isFieldAlamatValid;
-  TextEditingController _controllerNamaLengkap = TextEditingController();
-  TextEditingController _controllerNoHP = TextEditingController();
-  TextEditingController _controllerAlamat = TextEditingController();
+  final bool _isLoading = false;
+  bool? _isFieldNamaLengkapValid;
+  bool? _isFieldNoHPValid;
+  bool? _isFieldAlamatValid;
+  final TextEditingController _controllerNamaLengkap = TextEditingController();
+  final TextEditingController _controllerNoHP = TextEditingController();
+  final TextEditingController _controllerAlamat = TextEditingController();
+
+  @override
+  void dispose() {
+    _controllerNamaLengkap.dispose();
+    _controllerNoHP.dispose();
+    _controllerAlamat.dispose();
+    super.dispose();
+  }
   
   @override
   Widget build(BuildContext context) {
     //TODO: implement build
     return Scaffold(
       key: _scaffoldState,
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: new AppBar(
         title: new Text("Tambah Member"),
         flexibleSpace: Container(
@@ -56,7 +63,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
 
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     child: Text(
                       "Simpan",
                       style: TextStyle(
@@ -97,7 +104,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
       decoration: InputDecoration(
         // hintText: 'Enter your full name',
         labelText: "Full Name",
-        errorText: _isFieldNamaLengkapValid == null || _isFieldNamaLengkapValid ? null : "Full name is required",
+        errorText: _isFieldNamaLengkapValid ?? true ? null : "Full name is required",
         border: OutlineInputBorder(
           borderSide: BorderSide()
         ),
@@ -117,7 +124,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
       decoration: InputDecoration(
         // hintText: 'Enter your full name',
         labelText: "No HP",
-        errorText: _isFieldNoHPValid == null || _isFieldNoHPValid ? null : "No HP is required",
+        errorText: _isFieldNoHPValid ?? true ? null : "No HP is required",
         border: OutlineInputBorder(
           borderSide: BorderSide()
         ),
@@ -137,7 +144,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
       decoration: InputDecoration(
         // hintText: 'Enter your full name',
         labelText: "Alamat",
-        errorText: _isFieldAlamatValid == null || _isFieldAlamatValid ? null : "Alamat is required",
+        errorText: _isFieldAlamatValid ?? true ? null : "Alamat is required",
         border: OutlineInputBorder(
           borderSide: BorderSide()
         ),

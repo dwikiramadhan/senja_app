@@ -5,6 +5,8 @@ import 'package:senja_app/widgets/counter.dart';
 import 'package:senja_app/widgets/my_header.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,18 +16,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
         fontFamily: "Poppins",
-        textTheme: TextTheme(body1: TextStyle(color: kBodyTextColor))
+        textTheme: TextTheme(bodyMedium: TextStyle(color: kBodyTextColor))
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  static var today = new DateTime.now();
-  var formatedTanggal = new DateFormat.yMMMd().format(today);
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final formatedTanggal = DateFormat.yMMMd().format(DateTime.now());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:senja_app/widgets/add_member.dart';
-import 'package:senja_app/widgets/info_screen.dart';
 
 class MemberScreen extends StatelessWidget {
+  const MemberScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

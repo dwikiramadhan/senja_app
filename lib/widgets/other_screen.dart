@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:senja_app/main.dart';
 import 'package:senja_app/widgets/home_screen.dart';
-import 'package:senja_app/widgets/info_screen.dart';
 import 'package:senja_app/widgets/member.dart';
 
 class OtherScreen extends StatelessWidget {
+  const OtherScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +29,14 @@ class OtherScreen extends StatelessWidget {
             ListTile(
               title: Text("M Dwiki Ramadhan"),
               subtitle: Text("dwikiramadhan73@gmail.com"),
-              trailing: FlatButton(
-                child: Text("Keluar"),
+              trailing: TextButton(
                 // onPressed: ButtonClick,
-                textColor: Colors.red,
-                highlightColor: Colors.black,
+                onPressed: null,
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.red,
+                  disabledForegroundColor: Colors.red,
+                ),
+                child: Text("Keluar"),
               ),
             ),
             Divider(),

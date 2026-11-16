@@ -3,7 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:senja_app/constant.dart';
 import 'package:senja_app/widgets/my_header.dart';
 
+
 class InfoScreen extends StatelessWidget {
+  const InfoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,8 +79,8 @@ class PreventCard extends StatelessWidget {
   final String title;
   final String text;
   const PreventCard({
-    Key key, this.image, this.title, this.text,
-  }) : super(key: key);
+    super.key, required this.image, required this.title, required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -152,8 +155,8 @@ class SymptomCard extends StatelessWidget {
   final String title;
   final bool isActive;
   const SymptomCard({
-    Key key, this.image, this.title, this.isActive = false,
-  }) : super(key: key);
+    super.key, required this.image, required this.title, this.isActive = false,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Dart / Flutter packages (pubspec.yaml & pubspec.lock)
+  - package-ecosystem: "pub"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      firebase:
+        patterns:
+          - "firebase_*"
+          - "cloud_firestore*"
+
+  # Android Gradle build (AGP, Kotlin, Gradle plugins)
+  - package-ecosystem: "gradle"
+    directory: "/android"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

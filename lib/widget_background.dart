@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'app_color.dart';
 
 class WidgetBackground extends StatelessWidget {
+  WidgetBackground({super.key});
+
   final AppColor appColor = AppColor();
 
   @override
@@ -29,7 +31,7 @@ class WidgetBackground extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9000),
               backgroundBlendMode: BlendMode.hardLight,
-              color: Colors.redAccent.withOpacity(0.8),
+              color: Colors.redAccent.withValues(alpha: 0.8),
             ),
           ),
         )

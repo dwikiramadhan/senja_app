@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:senja_app/constant.dart';
 import 'package:senja_app/widgets/info_screen.dart';
 
 class MyHeader extends StatelessWidget {
@@ -8,8 +7,8 @@ class MyHeader extends StatelessWidget {
   final String textTop;
   final String textBottom;
   const MyHeader({
-    Key key, this.image, this.textTop, this.textBottom,
-  }) : super(key: key);
+    super.key, required this.image, required this.textTop, required this.textBottom,
+  });
 
   @override
   Widget build(BuildContext context) {

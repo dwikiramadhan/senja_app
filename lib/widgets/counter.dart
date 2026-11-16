@@ -6,8 +6,8 @@ class Counter extends StatelessWidget {
   final Color color;
   final String title;
   const Counter({
-    Key key, this.number, this.color, this.title,
-  }) : super(key: key);
+    super.key, required this.number, required this.color, required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Counter extends StatelessWidget {
           width: 25,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: color.withOpacity(.26),
+            color: color.withValues(alpha: .26),
           ),
           child: Container(
             decoration: BoxDecoration(
