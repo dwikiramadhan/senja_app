@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.4.0
+  flutter_svg: ^2.5.0
   intl: ^0.20.3
 
   # Flutter plugin for Cloud Firestore, a cloud hosted, noSQL database with live synchronization
